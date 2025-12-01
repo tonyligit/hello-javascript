@@ -42,6 +42,13 @@ export default function substract(a, b) {
     return a - b
 }
 
+/*
+solo se puede tener un default y tiene que ser una funcion o clase
+export default function substract2(a, b) {
+    return a - b
+}
+    */
+
 // export default class MyClass {
 
 //     func() {

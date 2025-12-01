@@ -7,7 +7,7 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=6565
 
 // Concatenación
 
-let myName = "Brais"
+let myName = "Tony"
 let greeting = "Hola, " + myName + "!"
 console.log(greeting)
 console.log(typeof greeting)
@@ -26,13 +26,13 @@ console.log(greeting[11])
 console.log(greeting.toUpperCase()) // Mayúsculas
 console.log(greeting.toLowerCase()) // Minúsculas
 console.log(greeting.indexOf("Hola")) // Índice
-console.log(greeting.indexOf("Brais"))
-console.log(greeting.indexOf("MoureDev"))
+console.log(greeting.indexOf("Tony"))
+console.log(greeting.indexOf("LiDev"))
 console.log(greeting.includes("Hola")) // Incluye
-console.log(greeting.includes("Brais"))
-console.log(greeting.includes("MoureDev"))
+console.log(greeting.includes("Tony"))
+console.log(greeting.includes("LiDev"))
 console.log(greeting.slice(0, 10)) // Sección
-console.log(greeting.replace("Brais", "MoureDev")) // Reemplazo
+console.log(greeting.replace("Tony", "LiDev")) // Reemplazo
 
 // Template literals (plantillas literales)
 

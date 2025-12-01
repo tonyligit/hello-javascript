@@ -3,11 +3,16 @@ Clase 44 - Módulos
 Vídeo: https://youtu.be/1glVfFxj8a4?t=21480
 */
 
+//para importar modulos una opcion es crear un fichero package.json con este contenido
+//{
+//    "type": "module"
+//}
+
 // Importación de módulos
 
 import { add, PI, name, Circle } from "./28-export-modules.js"
 
-import defaultImport from "./28-export-modules.js"
+import defaultImport from "./28-export-modules.js" //por defecto importa la funcion que esta en el otro fichero como default (substract) y le puedes cambiar de nombre
 
 // Funciones
 

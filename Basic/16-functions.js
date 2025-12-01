@@ -6,7 +6,6 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=12829
 // Funciones
 
 // Simple
-
 function myFunc() {
     console.log("¡Hola, función!")
 }
@@ -16,16 +15,13 @@ for (let i = 0; i < 5; i++) {
 }
 
 // Con parámetros
-
 function myFuncWithParams(name) {
     console.log(`¡Hola, ${name}!`)
 }
 
-myFuncWithParams("Brais")
-myFuncWithParams("MoureDev")
+myFuncWithParams("Tony")
 
 // Funciones anónimas
-
 const myFunc2 = function (name) {
     console.log(`¡Hola, ${name}!`)
 }
@@ -33,7 +29,6 @@ const myFunc2 = function (name) {
 myFunc2("Brais Moure")
 
 // Arrow functions
-
 const myFunc3 = (name) => {
     console.log(`¡Hola, ${name}!`)
 }
@@ -44,7 +39,6 @@ myFunc3("Brais Moure")
 myFunc4("Brais Moure")
 
 // Parámetros
-
 function sum(a, b) {
     console.log(a + b)
 }
@@ -58,15 +52,15 @@ function defaultSum(a = 0, b = 0) {
 }
 
 // Por defecto
-
 defaultSum()
 defaultSum(5)
 defaultSum(5, 10)
 defaultSum(undefined, 5)
 
 // Retorno de valores
-
 function mult(a, b) {
+    console.log("result")
+    defaultSum(5, 10)
     return a * b
 }
 
@@ -74,7 +68,6 @@ let result = mult(5, 10)
 console.log(result)
 
 // Funciones anidadas
-
 function extern() {
     console.log("Función externa")
     function intern() {
@@ -86,8 +79,7 @@ function extern() {
 extern()
 // intern() Error: fuera del scope
 
-// Funciones de orden superior
-
+// Funciones de orden superior (funciones que reciben otra funcion como argomento)
 function applyFunc(func, param) {
     func(param)
 }
@@ -95,7 +87,7 @@ function applyFunc(func, param) {
 applyFunc(myFunc4, "función de orden superior")
 
 // forEach
-
+console.log("------------forEach section----------------")
 const myArray = [1, 2, 3, 4]
 
 const mySet = new Set(["Brais", "Moure", "mouredev", 37, true, "braismoure@mouredev.com"])

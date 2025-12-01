@@ -5,7 +5,7 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=7277
 
 // if, else if, else
 
-// if (si)
+// if 
 
 let age = 37
 

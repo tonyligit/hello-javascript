@@ -6,8 +6,8 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=3599
 // Tipos de datos primitivos
 
 // Cadenas de texto (string)
-let myName = "Brais Moure"
-let alias = 'MoureDev'
+let myName = "Antonio Li Causi"
+let alias = 'TonyLi'
 let email = `braismoure@mouredev.com`
 
 // Números (number)
@@ -18,11 +18,11 @@ let height = 1.77 // Decimal
 let isTeacher = true
 let isStudent = false
 
-// Undefined
+// Undefined (por ejemplo para variables aun no definidas)
 let undefinedValue
 console.log(undefinedValue)
 
-// Null
+// Null (lo usamos cuando de manera intencional queremos indicar que tiene valor nulo)
 let nullValue = null
 
 // Symbol
@@ -30,7 +30,7 @@ let nullValue = null
 let mySymbol = Symbol("mysymbol")
 
 // BigInt
-
+// dos formas de rapresentarlo
 let myBigInt = BigInt(817239871289371986589716389471628379612983761289376129)
 let myBigInt2 = 817239871289371986589716389471628379612983761289376129n
 

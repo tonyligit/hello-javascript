@@ -6,7 +6,6 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=11575
 // Loops o bucles
 
 // for
-
 for (let i = 0; i < 5; i++) {
     console.log(`Hola ${i}`)
 }
@@ -18,7 +17,6 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 // while
-
 let i = 0
 while (i < 5) {
     console.log(`Hola ${i}`)
@@ -30,7 +28,6 @@ while (i < 5) {
 // }
 
 // do while
-
 i = 6
 do {
     console.log(`Hola ${i}`)
@@ -38,7 +35,6 @@ do {
 } while (i < 5)
 
 // for of
-
 const myArray = [1, 2, 3, 4]
 
 const mySet = new Set(["Brais", "Moure", "mouredev", 37, true, "braismoure@mouredev.com"])
@@ -68,7 +64,6 @@ for (let value of myString) {
 }
 
 // break y continue
-
 for (let i = 0; i < 10; i++) {
     if (i == 5) {
         continue

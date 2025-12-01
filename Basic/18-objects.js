@@ -3,7 +3,7 @@ Clase 33 - Objetos
 Vídeo: https://youtu.be/1glVfFxj8a4?t=14229
 */
 
-// Objetos
+//// Objetos
 
 // Sintaxis
 
@@ -13,7 +13,7 @@ let person = {
     alias: "MoureDev"
 }
 
-// Acceso a propiedades
+//// Acceso a propiedades
 
 // Notación punto
 console.log(person.name)
@@ -22,7 +22,6 @@ console.log(person.name)
 console.log(person["name"])
 
 // Modificación de propiedades
-
 person.name = "Brais Moure"
 console.log(person.name)
 
@@ -32,20 +31,17 @@ console.log(person.age)
 console.log(typeof person.age)
 
 // Eliminación de propiedades
-
 delete person.age
 
 console.log(person)
 
 // Nueva propiedad
-
 person.email = "braismoure@mouredev.com"
 person["age"] = 37
 
 console.log(person)
 
 // Métodos (funciones)
-
 let person2 = {
     name: "Brais",
     age: 37,
@@ -57,7 +53,6 @@ let person2 = {
 person2.walk()
 
 // Anidación de objetos
-
 let person3 = {
     name: "Brais",
     age: 37,
@@ -75,7 +70,6 @@ let person3 = {
 }
 
 console.log(person3)
-
 console.log(person3.name)
 console.log(person3.job)
 console.log(person3.job.name)
@@ -90,22 +84,21 @@ let person4 = {
     age: 37
 }
 
+//incluso si person y person4 son iguales, nos dará false porqué compara la direccion de memoria
 console.log(person)
 console.log(person4)
-
+//hay que comparar las propriedades
 console.log(person == person4)
 console.log(person === person4)
-
 console.log(person.name == person4.name)
 
-// Iteración
 
+// Iteración
 for (let key in person4) {
     console.log(key + ": " + person4[key])
 }
 
 // Funciones como objetos
-
 function Person(name, age) { // Debería ser una clase
     this.name = name
     this.age = age

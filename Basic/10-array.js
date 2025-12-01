@@ -3,10 +3,10 @@ Clase 25 - Arrays
 Vídeo: https://youtu.be/1glVfFxj8a4?t=8741
 */
 
-// Array
+//// Array
 
 // Declaración
-
+//dos maneras de crearlo
 let myArray = []
 let myArray2 = new Array()
 
@@ -27,6 +27,8 @@ myArray2 = new Array(1, 2, 3, 4)
 console.log(myArray)
 console.log(myArray2)
 
+//nos permite almanecenar de todo
+
 myArray = ["Brais", "Moure", "mouredev", 37, true]
 myArray2 = new Array("Brais", "Moure", "mouredev", 37, true)
 
@@ -37,6 +39,7 @@ myArray2 = new Array(3)
 myArray2[2] = "Brais"
 // myArray2[0] = "Moure"
 myArray2[1] = "mouredev"
+//solo se autoridemensiona, aqui añade dos posicionas más
 myArray2[4] = "mouredev"
 
 console.log(myArray2)
