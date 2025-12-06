@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+        <!-- forma #2: script en el head -->
+    <script defer>
+        //el defer indica que se cargue toda la html antes del script, es importante cuando el script este en el head
+        alert('me ejecuto desde el head')
+    </script>
+    <title>Mi primera pagina web</title>
+    <!-- forma #3: Archivo externo -->
+    <script defer src="./holaMundo.js"></script>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <!-- forma #1: script en el body -->
+    <script>
+        //comentario
+        document.write('<h2>Hola Mundo</h2>')
+        alert('hola soy una alerta del body!')
+        console.log('Hola soy la consola')
+        console.log('Bienvenido')
+    </script>
+</body>
+</html>

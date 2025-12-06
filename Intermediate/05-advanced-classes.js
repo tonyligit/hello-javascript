@@ -107,16 +107,18 @@ class Session {
 
 const session1 = new Session("Brais Moure")
 const session2 = new Session()
-console.log(session1.name)
-console.log(session2.name)
-console.log(session1 === session2)
+console.log(session1.name) //Brais Moure
+console.log(session2.name) //Brais Moure
+console.log(session1 === session2) //True
 
+//incluso si le cambiamos de nombre sigue teniendo el mismo, 
+// si quisieramos modificar valores deberiamos crear mecanismos para hacerlo
 const session3 = new Session("MoureDev")
-console.log(session3.name)
-console.log(session2 === session3)
+console.log(session3.name) //Brais Moure
+console.log(session2 === session3)  //True
 
 // - Symbol
-
+//crea  una propriedad semi privada
 const ID = Symbol("id")
 
 class User {
@@ -131,9 +133,10 @@ class User {
 }
 
 const user = new User("Brais")
-console.log(user.name)
-console.log(user.ID)
-console.log(user.getId())
+console.log(user.name) //Brais
+console.log(user.ID) //undefined
+console.log(user[ID]) //0.62641759027106
+console.log(user.getId()) //0.62641759027106
 
 // - instanceof
 
@@ -150,7 +153,8 @@ const anotherCar = Object.create(Car.prototype)
 console.log(anotherCar instanceof Car)
 
 // - Proxy
-
+//Proxy sirve para interceptar llamadas a métodos de un objeto, 
+// permitirte añadir lógica extra antes o después de esas llamadas, sin modificar la clase original
 const proxy = {
     get(target, property) {
         console.log(`Se accede a la propiedad ${property}`)
@@ -171,10 +175,10 @@ class BankAccount {
 }
 
 const account = new Proxy(new BankAccount(100), proxy)
-console.log(account.balance)
+console.log(account.balance) //Se accede a la propiedad balance
 
 account.balance = 50
-console.log(account.balance)
+console.log(account.balance) //Se accede a la propiedad balance
 
 // Error
 // account.balance = -10

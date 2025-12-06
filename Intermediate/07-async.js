@@ -28,7 +28,7 @@ console.log("Fin")
 // 5. El proceso se repite
 
 // Código asíncrono
-
+//primero se ejecuta el sincrono y al final la asincornas
 // - Callbacks
 
 console.log("Inicio")
@@ -39,7 +39,7 @@ setTimeout(() => {
 
 console.log("Fin")
 
-// - Problema: Callback Hell
+// - Problema: Callback Hell: no sabemos cual proceso acaba antes
 
 function step1(callback) {
     setTimeout(() => {
@@ -62,6 +62,8 @@ function step3(callback) {
     }, 1000)
 }
 
+//al final para soucionar el problema que se ejecutan de manera no controlada 
+// se las tenemos que anificar y no es una buena solucion
 step1(() => {
     step2(() => {
         step3(() => {

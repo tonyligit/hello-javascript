@@ -54,7 +54,8 @@ console.log(words)
 let unsorted = ["b", "a", "d", "c"]
 let sorted = unsorted.sort()
 console.log(sorted)
-
+//para los numeros funciona de manera distinta, como los compara como se fueran texto, hay que darle una formula ((a, b) => a - b))
+//Si el resultado es negativo → a va antes que b
 unsorted = [3, 4, 1, 6, 10]
 sorted = unsorted.sort((a, b) => a - b)
 
