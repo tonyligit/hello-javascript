@@ -13,33 +13,33 @@
 	background: variables.$color-fondo-formulario;
 	border: 1px solid variables.$color-borde;
 	border-radius: 10px;
-	display: grid;
-	grid-template-rows: auto 1fr auto;
-	gap: 30px;
-	transition: 0.3s ease all;
+	display: grid; //Convierte el elemento en un contenedor Grid. Esto permite organizar el interior en filas y columnas
+	grid-template-rows: auto 1fr auto; //3 lineas: se ajusta a su contenido|ocupa espacio que sobra|se ajusta a su contenido (header-body-footer)
+	gap: 30px; //Define el espacio entre las filas y columnas del grid.
+	transition: 0.3s ease all;  //This means ALL animatable CSS properties will transition if they change
 
 	&--hidden {
 		display: none;
 	}
 
 	&__header {
-		display: flex;
-		flex-direction: column;
-		gap: 30px;
-		padding: 30px 30px 0 30px;
+		display: flex; //Esto activa Flexbox, un sistema para acomodar elementos en filas o columnas.
+		flex-direction: column;  //Los hijos deben colocarse verticalmente, uno debajo del otro
+		gap: 30px;  //Es la separación entre los hijos de ese contenedor.
+		padding: 30px 30px 0 30px;  //top  right  bottom  left
 	}
 
 	&__body {
 		transition: 0.3s ease all;
 		display: flex;
-		flex-wrap: nowrap;
-		overflow: hidden;
-		scroll-snap-type: x mandatory;
+		flex-wrap: nowrap; //Indica que los elementos hijos no se envuelven a la siguiente línea.
+		overflow: hidden; //Oculta cualquier contenido que salga de los límites del contenedor
+		scroll-snap-type: x mandatory;  //Activa la “alineación de scroll” en el eje horizontal (x).mandatory → obliga a que el scroll se detenga exactamente en cada sección.
 	}
 
 	&__seccion {
 		padding: 0 30px;
-		scroll-snap-align: start;
+		scroll-snap-align: start; //Indica que esta sección se alineará al inicio del contenedor cuando se haga scroll.
 		min-width: 100%;
 		flex-direction: column;
 		// display: none;
@@ -51,7 +51,7 @@
 	}
 
 	&__footer {
-		display: flex;
+		display: flex;  //el valor por defecto es row de la direccion
 		justify-content: center;
 		padding-bottom: 30px;
 	}
@@ -101,7 +101,7 @@
 		font-size: 16px;
 		color: #fff;
 		border-radius: 5px;
-		&:focus {
+		&:focus { //cuando el user hace click o navega con tab hasta el input
 			border: 1px solid variables.$color-borde-activo;
 		}
 
@@ -113,7 +113,7 @@
 		}
 	}
 
-	&__input--error + &__leyenda {
+	&__input--error + &__leyenda {  //aplica cuando leyeda esta despues input--error
 		display: block;
 	}
 
@@ -141,16 +141,16 @@
 		overflow: hidden;
 
 		&--disabled {
-			position: relative;
-			&::after {
-				content: '';
-				position: absolute;
+			position: relative; 
+			&::after {  //Permite crear un “elemento” virtual después del contenido real del elemento
+				content: ''; // Necesario para que exista el pseudo-elemento
+				position: absolute; // Se posiciona respecto al botón
 				left: 0;
 				bottom: 0;
-				width: 100%;
-				height: 5px;
-				background: #fff;
-				animation: progresoBtn 4s ease-out forwards;
+				width: 100%; // Empieza ocupando todo el ancho del botón
+				height: 5px; // Altura de la barra de progreso
+				background: #fff; // Color de la barra
+				animation: progresoBtn 4s ease-out forwards; // Aplica la animación definida con @keyframes
 			}
 			background: variables.$color-primario-deshabilitado;
 		}
@@ -182,7 +182,7 @@
 	}
 
 	&__radio-input:checked + &__radio-label {
-		&::after {
+		&::after { //Permite crear un círculo dentro del radio button visualmente, sin HTML extra.
 			content: '';
 			display: block;
 			width: 13px;
@@ -204,8 +204,8 @@
 		font-size: 14px;
 		padding: 0 25px 0px 60px;
 		position: relative;
-		cursor: pointer;
-		&::before {
+		cursor: pointer; //Cambia el cursor del mouse a una mano cuando pasa sobre el elemento
+		&::before { //Pseudo-elemento que se crea antes del contenido del selector padre. Se usa aquí para crear la “burbuja” del radio button vacía.
 			content: '';
 			display: block;
 			position: absolute;

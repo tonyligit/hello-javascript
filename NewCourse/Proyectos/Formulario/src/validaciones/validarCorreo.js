@@ -1,4 +1,4 @@
-const validarCorreo = () => {
+const validarCorreo = (formulario) => {
 	// Expresion regular para validar un correo.
 	const expRegCorreo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 

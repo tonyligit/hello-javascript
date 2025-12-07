@@ -1,63 +1,60 @@
 import validarCantidad from './validaciones/validarCantidad';
 import validarNombre from './validaciones/validarNombre';
 import validarCorreo from './validaciones/validarCorreo';
+import {formulario} from './formulario';
 
 const linea = document.getElementById('linea-pasos');
 
 linea.addEventListener('click', (e) => {
-	// Validamos que el click sea en un paso, si el paso mas cercano no tiene check no podemos pasar
-	if (!e.target.closest('.linea-pasos__paso')) return false;
-
-	// Validamos el campo actual antes de saltar a otro.
-
-	// Obtenemos el paso actual.
-	const pasoActual = document.querySelector('.linea-pasos__paso-check--active').closest('.linea-pasos__paso')
+	// Chequeamos si el click esta en el step o fuera, si es fuera devuelve false
+	if (!e.target.closest('.linea-pasos__paso')) {
+		console.log('fuera el circulo del step')
+		return false;
+		// e es el objeto del evento (por ejemplo, un click).
+        // e.target es el elemento exacto que fue clickeado.
+		//.closest(selector) Es un método que sube por los ancestros del elemento hasta encontrar uno que coincida con el selector sino devuelve null.
+	}
+	
+	// Obtenemos el paso al que queremos navegar y el actual
+	const pasoANavegar = e.target.closest('.linea-pasos__paso');
+	const currentStepId = document.querySelector('.linea-pasos__paso-check--active').closest('.linea-pasos__paso')
 		.dataset.paso;
 
-	// Validamos el campo actual.
-	if (pasoActual === 'cantidad') {
-		if (!validarCantidad()) {
-			console.log('falsee');
+	// Validamos si el step actual esta correctamente rellenado, sino devuelve false
+	if (currentStepId === 'cantidad') {
+		if (!validarCantidad(formulario)) {
 			return false;
 		}
-	} else if (pasoActual === 'datos') {
-		if (!validarNombre() || !validarCorreo()) return false;
+	} else if (currentStepId === 'datos') {
+		if (!validarNombre(formulario) || !validarCorreo(formulario)) return false;
 	}
 
-	// Obtenemos el paso al que queremos navegar.
-	const pasoANavegar = e.target.closest('.linea-pasos__paso');
-
-	// Comprobamos si el paso tiene el icono de palomita.
-	// Solo queremos poder dar click a los que tienen palomita.
+	// Solo queremos poder dar click a los que tienen CHECK.
 	if (pasoANavegar.querySelector('.linea-pasos__paso-check--checked')) {
-		// Obtenemos el paso actual.
+		// quitamos el icono de activo al step actual
 		const pasoActual = linea.querySelector('.linea-pasos__paso-check--active');
 		if (pasoActual) {
-			// Le quitamos la clase de activo.
 			pasoActual.classList.remove('linea-pasos__paso-check--active');
 		}
 
 		// Obtenemos el id del paso a navegar.
 		const id = pasoANavegar.dataset.paso;
 
-		// Nos aseguramos de que el texto del boton sea siguiente.
+		//Nos aseguramos que el boton sea SIGUIENTE,con el icono correcto y que este activo
 		const btnFormulario = document.querySelector('.formulario__btn');
 		btnFormulario.querySelector('span').innerText = 'Siguiente';
-
 		// Nos aseguramos de ocultar el icono de banco.
 		btnFormulario
 			.querySelector('[data-icono="banco"]')
 			.classList.remove('formulario__btn-contenedor-icono--active');
-
 		// Nos aseguramos de mostrar el icono del siguiente.
 		btnFormulario
 			.querySelector('[data-icono="siguiente"]')
 			.classList.add('formulario__btn-contenedor-icono--active');
-
 		// Nos aseguramos de que no tenga la clase de disabled.
 		btnFormulario.classList.remove('formulario__btn--disabled');
 
-		// Navegamos al paso.
+		// Mostramos el body del step
 		document.querySelector(`.formulario__body [data-paso="${id}"]`).scrollIntoView({
 			inline: 'start',
 			behavior: 'smooth',

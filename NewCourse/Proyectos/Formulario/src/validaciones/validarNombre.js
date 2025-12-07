@@ -1,4 +1,4 @@
-const validarNombre = () => {
+const validarNombre = (formulario) => {
 	// Aceptamos cualquier digito (0-9), y un punto con decimales (opcional)
 	const expRegNombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 

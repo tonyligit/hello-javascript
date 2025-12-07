@@ -12,11 +12,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		&:nth-child(1) {
-			align-items: flex-start;
+		&:nth-child(1) { //selecciona el primer hijo dentro del contenedor padre.
+			align-items: flex-start; //los hijos del primer paso se alinean al inicio horizontalmente (a la izquierda).
 		}
-		&:nth-last-child(2) {
-			align-items: flex-end;
+		&:nth-last-child(2) { //Selecciona el penúltimo hijo del contenedor padre
+			align-items: flex-end; //los hijos del penúltimo paso se alinean al final horizontalmente (a la derecha).
 		}
 	}
 
